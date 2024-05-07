@@ -32,7 +32,7 @@ const getCurrentLocationWeather = async (city: string = ""): Promise<LocationDat
         const response = await getLocationWeather(URL_WEATHER, city, crd);
         verifyResponse(
           response.success,
-          "Current location weather loaded successfully"
+          // "Current location weather loaded successfully"
         );
         resolve({...response.data as unknown as LocationData, success:response.success});
       } catch (error) {

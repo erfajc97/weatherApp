@@ -30,7 +30,7 @@ const getForestcastWeather = async (city: string = ""): Promise<LocationData | n
         const response = await getForescastWeather(URL_FORECAST, city, crd);
         verifyResponse(
           response.success,
-          "Forescast weather loaded successfully"
+          // "Forescast weather loaded successfully"
         );
         resolve(response.data as unknown as LocationData);
       } catch (error) {

@@ -8,3 +8,5 @@ npm run dev
 
 Para ver el proyecto en:
 http://localhost:5173/
+
+Dar permiso al navegador para acceder a su ubicacion
