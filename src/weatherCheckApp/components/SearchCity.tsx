@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-
-interface SearchCityProps {
-  setCity: React.Dispatch<React.SetStateAction<string>>;
-}
+import { SearchCityProps } from "../../Type";
 
 const SearchCity: React.FC<SearchCityProps> = ({ setCity }) => {
   const [inputValue, setInputValue] = useState("");

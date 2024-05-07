@@ -1,16 +1,7 @@
-import axios, { AxiosResponse, AxiosError } from "axios";
+import axios, { AxiosResponse } from "axios";
+import { Coordinates, WeatherResponse } from "../../Type";
 
-interface Coordinates {
-  latitude: number;
-  longitude: number;
-}
 
-interface WeatherResponse {
-  success: boolean;
-  data?: unknown; 
-  status?: number | string;
-  error?: AxiosError | undefined; 
-}
 // service to get the forescast weather
 const getForescastWeather = async (URL_FORECAST: string, city: string, crd?: Coordinates): Promise<WeatherResponse> => {
   try {

@@ -1,29 +1,8 @@
+import { LocationData } from "../../Type";
 import getLocationWeather from "../services/getLocationWeather";
 import { URL_WEATHER } from "../url/urls";
 import verifyResponse from "./verifyResponse";
 
- interface LocationData {
-    main?: {
-      temp: number;
-      pressure: number;
-    };
-    name: string;
-    sys?: {
-      country: string;
-    };
-    weather?: {
-      description: string;
-      icon: string;
-    }[];
-    wind?: {
-      speed: number;
-    };
-    clouds?: {
-      all: number;
-   };
-   success:boolean;
-}
-  
 // this function will get the current location weather
 const getCurrentLocationWeather = async (city: string = ""): Promise<LocationData | null> => {
   

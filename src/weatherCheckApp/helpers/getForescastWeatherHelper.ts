@@ -1,27 +1,8 @@
+import { LocationData } from "../../Type";
 import getForescastWeather from "../services/getForescastWeather";
 import {  URL_FORECAST } from "../url/urls";
 import verifyResponse from "./verifyResponse";
 
- interface LocationData {
-    main?: {
-      temp: number;
-      pressure: number;
-    };
-    name: string;
-    sys?: {
-      country: string;
-    };
-    weather?: {
-      description: string;
-      icon: string;
-    }[];
-    wind?: {
-      speed: number;
-    };
-    clouds?: {
-      all: number;
-    };
-}
   
 // this function will get the forescast weather
 const getForescastWeatherHelper = async (city: string = ""): Promise<LocationData | null> => {

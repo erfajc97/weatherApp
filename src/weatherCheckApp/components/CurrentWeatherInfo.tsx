@@ -1,11 +1,8 @@
 import Loading from "./Loading";
 import useLocationWeather from "../hooks/useLocationWeather";
+import { WeatherInfoProps } from "../../Type";
 
-interface CurrentWeatherInfoProps {
-  city: string;
-}
-
-const CurrentWeatherInfo = ({ city }: CurrentWeatherInfoProps) => {
+const CurrentWeatherInfo = ({ city }: WeatherInfoProps) => {
   const { loading, location, temperature } = useLocationWeather(city);
   return (
     <div>

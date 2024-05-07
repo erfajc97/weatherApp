@@ -1,11 +1,9 @@
+import { WeatherInfoProps } from "../../Type";
 import useLocationWeather from "../hooks/useLocationWeather";
 import ForescastItem from "./ForescastItem";
 import Loading from "./Loading";
-interface CurrentWeatherInfoProps {
-  city: string;
-}
 
-const ForescastInfo = ({ city }: CurrentWeatherInfoProps) => {
+const ForescastInfo = ({ city }: WeatherInfoProps) => {
   const { loading, forescast } = useLocationWeather(city);
   // this for loop serves to display only a certain number of items
   const forecastItems =

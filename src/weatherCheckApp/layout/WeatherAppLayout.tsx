@@ -1,11 +1,8 @@
-import { ReactNode, FC } from "react";
+import { FC } from "react";
 import Header from "../components/Header";
+import { ChildrenProps } from "../../Type";
 
-interface WeatherLayoutProps {
-  children: ReactNode;
-}
-
-const WeatherAppLayout: FC<WeatherLayoutProps> = ({ children }) => {
+const WeatherAppLayout: FC<ChildrenProps> = ({ children }) => {
   return (
     <div className="bg-slate-500 w-full min-h-screen">
       <Header />

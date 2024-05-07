@@ -2,40 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import getCurrentLocationWeather from "../helpers/getCurrentLocationWeather";
 import getForescastWeatherHelper from "../helpers/getForescastWeatherHelper";
 import { ErrorContext } from "../context/ErrorContext";
+import { LocationData } from "../../Type";
 const useLocationWeather = (city: string = "") => {
   const { setError } = useContext(ErrorContext);
-  interface LocationData {
-    main?: {
-      temp: number;
-      pressure: number;
-    };
-    name: string;
-    sys?: {
-      country: string;
-    };
-    weather?: {
-      description: string;
-      icon: string;
-    }[];
-    wind?: {
-      speed: number;
-    };
-    clouds?: {
-      all: number;
-    };
-    list: ForecastList[];
-  }
-
-  interface ForecastList {
-    dt_txt: string;
-    main: {
-      temp: number;
-    };
-    weather: {
-      description: string;
-      icon: string;
-    }[];
-  }
 
   const [location, setLocation] = useState<LocationData | null>(null);
   const [forescast, setForescast] = useState<LocationData | null>(null);

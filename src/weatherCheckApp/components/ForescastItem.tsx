@@ -1,9 +1,5 @@
-interface ForecastItemProps {
-  date: string;
-  temperature: number;
-  description: string;
-  icon: string;
-}
+import { ForecastItemProps } from "../../Type";
+
 const ForescastItem: React.FC<ForecastItemProps> = ({
   date,
   temperature,
