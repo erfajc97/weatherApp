@@ -22,7 +22,9 @@ import verifyResponse from "./verifyResponse";
       all: number;
    };
    success:boolean;
-  }
+}
+  
+// this function will get the current location weather
 const getCurrentLocationWeather = async (city: string = ""): Promise<LocationData | null> => {
   
   return new Promise((resolve, reject) => {

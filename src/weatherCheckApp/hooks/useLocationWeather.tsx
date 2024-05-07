@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import getCurrentLocationWeather from "../helpers/getCurrentLocationWeather";
-import getForestcastWeather from "../helpers/getForestcastWeather";
+import getForescastWeatherHelper from "../helpers/getForescastWeatherHelper";
 import { ErrorContext } from "../context/ErrorContext";
 const useLocationWeather = (city: string = "") => {
   const { setError } = useContext(ErrorContext);
@@ -46,6 +46,7 @@ const useLocationWeather = (city: string = "") => {
     fetchForescastWeather();
   }, [city]);
 
+  // this function will get the current location weather
   const fetchLocationWeather = async () => {
     setLoading(true);
     try {
@@ -61,10 +62,11 @@ const useLocationWeather = (city: string = "") => {
     }
   };
 
+  // this function will get the forescast weather
   const fetchForescastWeather = async () => {
     setLoading(true);
     try {
-      const response = await getForestcastWeather(city);
+      const response = await getForescastWeatherHelper(city);
       setForescast(response as unknown as LocationData);
     } catch (error) {
       console.error("Error fetching location weather:", error);
@@ -72,7 +74,7 @@ const useLocationWeather = (city: string = "") => {
       setLoading(false);
     }
   };
-
+  // transform farhenheit to celsius
   const temperature =
     location && location.main && location.main.temp
       ? Math.round(location.main.temp - 273.15)

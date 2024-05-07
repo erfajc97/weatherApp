@@ -6,16 +6,16 @@ interface SearchCityProps {
 
 const SearchCity: React.FC<SearchCityProps> = ({ setCity }) => {
   const [inputValue, setInputValue] = useState("");
-
+  // this function will handle the input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
-
+  // this function will prevent the default behavior of the form and set the city
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!inputValue.trim()) return; // No se establece city si el input está vacío o solo contiene espacios en blanco
+    if (!inputValue.trim()) return; // prevent empty string
     setCity(inputValue);
-    setInputValue(""); // Limpiar el valor del input después de enviar el formulario
+    setInputValue(""); // clear input
   };
 
   return (

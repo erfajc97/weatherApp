@@ -7,7 +7,7 @@ interface CurrentWeatherInfoProps {
 
 const ForescastInfo = ({ city }: CurrentWeatherInfoProps) => {
   const { loading, forescast } = useLocationWeather(city);
-
+  // this for loop serves to display only a certain number of items
   const forecastItems =
     forescast && forescast.list && forescast.list.length >= 3
       ? forescast.list.slice(0, 3)

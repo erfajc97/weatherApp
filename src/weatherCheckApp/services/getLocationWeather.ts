@@ -11,7 +11,7 @@ interface WeatherResponse {
   status?: number | string;
   error?: AxiosError | undefined; 
 }
-
+// service to get the location weather
 const getLocationWeather = async (URL_WEATHER: string, city: string, crd?: Coordinates): Promise<WeatherResponse> => {
   try {
     const currentLocation = crd ? `?lat=${crd.latitude}&lon=${crd.longitude}` : '';

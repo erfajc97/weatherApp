@@ -21,8 +21,10 @@ import verifyResponse from "./verifyResponse";
     clouds?: {
       all: number;
     };
-  }
-const getForestcastWeather = async (city: string = ""): Promise<LocationData | null> => {
+}
+  
+// this function will get the forescast weather
+const getForescastWeatherHelper = async (city: string = ""): Promise<LocationData | null> => {
   return new Promise((resolve, reject) => {
     async function success(pos: GeolocationPosition) {
       const crd = pos.coords;
@@ -47,4 +49,4 @@ const getForestcastWeather = async (city: string = ""): Promise<LocationData | n
   });
 };
 
-export default getForestcastWeather;
+export default getForescastWeatherHelper;
